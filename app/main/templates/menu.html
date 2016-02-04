@@ -1,0 +1,28 @@
+<ion-side-menus>
+
+  <!-- SIDEMENU -->
+  <ion-side-menu side="left" ng-controller="MenuCtrl as menuC">
+
+    <!-- menu header -->
+    <ion-header-bar class="bar-dark">
+      <h1 class="title">Navi</h1>
+    </ion-header-bar>
+
+    <!-- menu content -->
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close ui-sref="main.list">
+          <i class="icon ion-social-twitter"></i>&nbsp;Tweets
+        </ion-item>
+        <ion-item menu-close ui-sref="main.imprint">
+          <i class="icon ion-ios-information-outline"></i>&nbsp;Impressum
+        </ion-item>
+        <ion-item menu-close ui-sref="main.about">
+          <i class="icon ion-ios-medical"></i>&nbsp;About
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+  </ion-side-menu>
+
+</ion-side-menus>
