@@ -1,15 +1,36 @@
 <ion-view view-title="Impressum">
-  <ion-nav-buttons side="secondary">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
   </ion-nav-buttons>
-
-  <ion-content class="padding">
-    <div class="card">
-      <div class="item item-text-wrap">
-        <p>M-Way Solutions GmbH<br>
-          Stresemannstraße 79<br>
-          70191 Stuttgart<br>
-          Deutschland</p>
-        </div>
+  <!-- do you want padding? -->
+  <ion-content>
+    <div class="list">
+      <div class="item item-divider">
+        Firma
       </div>
+      <p class="item">
+        M-Way Solutions GmbH
+      </p>
+      <div class="item item-divider">
+        Über die Firma
+      </div>
+      <p class="item">
+        Enterprise Mobility Management</br >
+        aus Stuttgart: M-Way Solutions ist ein</br >
+        deutscher Anbieter für</br >
+        Mobile Enterprise Software und</br >
+        Mobile Business Solutions.</br >
+        </br >
+        URL: <a href="http://www.mwaysolutions.com/" target="_blank">http://www.mwaysolutions.com/</a>
+      </p>
+      <div class="item item-divider">
+        Anfahrt
+      </div>
+      <p class="item">
+        Stresemannstrasse 79<br />
+        82392 Stuttgart<br />
+        Germany
+      </p>
+    </div>
   </ion-content>
 </ion-view>

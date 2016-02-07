@@ -1,5 +1,9 @@
 
 .item-content p
 {
-  white-space: normal !important;
+  white-space: normal;
+}
+
+.ion-chevron-right:before {
+    color: red;
 }

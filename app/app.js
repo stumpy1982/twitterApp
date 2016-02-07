@@ -1,16 +1,5 @@
 'use strict';
-angular.module('PJsTwitterApp', [
-  'ionic',
-  'ngCordova',
-  'ngTwitter',
-  'ngCordovaOauth',
+angular.module('twitterApp', [
+  // load your modules here
   'main'
-])
-
-  .config(function ($ionicConfigProvider) {
-    $ionicConfigProvider.scrolling.jsScrolling(false);
-    $ionicConfigProvider.views.swipeBackEnabled(false);
-    $ionicConfigProvider.backButton.text('');
-    $ionicConfigProvider.backButton.icon('ion-arrow-left-c');
-    $ionicConfigProvider.backButton.previousTitleText(false);
-  });
+]);
