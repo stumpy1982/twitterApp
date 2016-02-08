@@ -1,12 +1,11 @@
 'use strict';
 angular.module('main')
-  .controller('TweetshashtagCtrl', function ($stateParams, $ionicSideMenuDelegate, $log, $ionicPlatform, $window, $scope, $ionicPopover, $filter, TwitterService) {
+  .controller('TweetshashtagCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $log, $ionicPlatform, $window, $ionicPopover, $filter, TwitterService) {
 
     this.controllerData = TwitterService.serviceData;
     var hashtag = $stateParams.hashtag;
     TwitterService.serviceData.hashtag = hashtag;
     var that = this;
-
 
     // Open Sidemenu
     $scope.openMenu = function () {
@@ -34,15 +33,20 @@ angular.module('main')
     };
 
     // Popover Template
-    var template = '<ion-popover-view><ion-header-bar> <h3 class="title">Filter</h3> </ion-header-bar>' +
+    var template = '<ion-popover-view><ion-header-bar>' +
+    '<h3 class="title">Filter by</h3></ion-header-bar>' +
     '<ion-content><div class="list">' +
-    '<label ng-click="sortTweets(\'date\')" class="item item-radio"><input type="radio" name="filtergroup"><div class="item-content">Date</div><i class="radio-icon ion-checkmark"></i></label>' +
-    '<label ng-click="sortTweets(\'author\')" class="item item-radio"><input type="radio" name="filtergroup"><div class="item-content">Author</div><i class="radio-icon ion-checkmark"></i></label>' +
+    '<label ng-click="sortTweets(\'date\')" class="item item-radio"><input type="radio" name="filtergroup">' +
+      '<div class="item-content">Date</div></label>' +
+    '<label ng-click="sortTweets(\'author\')" class="item item-radio"><input type="radio" name="filtergroup">' +
+      '<div class="item-content">Author</div></label>' +
     '</div></ion-content></ion-popover-view>';
 
-    // get the template from var template
+    // get the popover-template
     $scope.popover = $ionicPopover.fromTemplate(template, {
-      scope: $scope
+      scope: $scope,
+      animation: 'slide-in-up',
+      focusFirstInput: true
     });
 
     // Open Popover
@@ -54,6 +58,11 @@ angular.module('main')
     $scope.closePopover = function () {
       $scope.popover.hide();
     };
+
+    //Cleanup the popover when we're done with it!
+    $scope.$on('$destroy', function () {
+      $scope.popover.remove();
+    });
 
     // Sort Tweets by date or user.name
     $scope.sortTweets = function (sortvalinput) {

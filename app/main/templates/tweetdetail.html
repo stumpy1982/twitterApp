@@ -7,8 +7,10 @@
         <span>{{tweetdetailC.controllerData.tweet.user.name}}</span>
         <p ng-bind-html='tweetdetailC.controllerData.tweet.text | linky' ng-click='tweetdetailC.getLink($event)'></p>
       </div>
-      <p>{{tweetdetailC.controllerData.tweet.user.location}}</p>
-      <p>{{tweetdetailC.controllerData.tweet.created_at | StringToDate | date:'hh:mm - dd.MM.yyyy'}}</p>
+      <div class="item item-text-wrap">
+        <p>{{tweetdetailC.controllerData.tweet.user.location}}</p>
+        <p>{{tweetdetailC.controllerData.tweet.created_at | StringToDate | date:'hh:mm - dd.MM.yyyy'}}</p>
+      </div>
     </div>
 
   </ion-content>
