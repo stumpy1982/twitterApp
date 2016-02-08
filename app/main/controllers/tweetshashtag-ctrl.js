@@ -14,13 +14,13 @@ angular.module('main')
     };
 
     // Get Tweets by Hashtag
-    TwitterService.getTweetsByHashtag('loader').then(function () {
+    TwitterService.getTweetsByHashtag('ionicloader').then(function () {
       $log.log(that.controllerData.tweets);
     });
 
     // Pull to Refresh
     $scope.doRefresh = function () {
-      TwitterService.getTweetsByHashtag('noloader').then(function () {
+      TwitterService.getTweetsByHashtag('noionicloader').then(function () {
         $scope.$broadcast('scroll.refreshComplete');
       });
     };
@@ -40,6 +40,7 @@ angular.module('main')
     '<label ng-click="sortTweets(\'author\')" class="item item-radio"><input type="radio" name="filtergroup"><div class="item-content">Author</div><i class="radio-icon ion-checkmark"></i></label>' +
     '</div></ion-content></ion-popover-view>';
 
+    // get the template from var template
     $scope.popover = $ionicPopover.fromTemplate(template, {
       scope: $scope
     });
@@ -54,7 +55,7 @@ angular.module('main')
       $scope.popover.hide();
     };
 
-    // Sort Tweets
+    // Sort Tweets by date or user.name
     $scope.sortTweets = function (sortvalinput) {
       switch (sortvalinput) {
         case 'date':

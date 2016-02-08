@@ -8,7 +8,7 @@ angular.module('main', [
 .config(function ($stateProvider, $urlRouterProvider) {
 
   // ROUTING with ui.router
-  $urlRouterProvider.otherwise('/main/geotweets');
+  $urlRouterProvider.otherwise('/main/geolocationtweets');
   $stateProvider
   // this state is placed in the <ion-nav-view> in the index.html
   .state('main', {
@@ -17,11 +17,11 @@ angular.module('main', [
     templateUrl: 'main/templates/tabs.html',
     controller: 'TabsCtrl as tabsC'
   })
-  .state('main.geotweets', {
-    url: '/geotweets',
+  .state('main.geolocationtweets', {
+    url: '/geolocationtweets',
     views: {
       'tab-tweets': {
-        templateUrl: 'main/templates/geotweets.html',
+        templateUrl: 'main/templates/geolocationtweets.html',
         controller: 'GeotweetsCtrl as geotweetsC',
         resolve: {
           itemG: function (TwitterService) {
@@ -32,7 +32,7 @@ angular.module('main', [
     }
   })
   .state('main.tweetDetail', {
-    url: '/geotweets/tweetshashtag/:hashtag/detail/:tweetid',
+    url: '/geolocationtweets/tweetshashtag/:hashtag/detail/:tweetid',
     views: {
       'tab-tweets': {
         templateUrl: 'main/templates/tweetdetail.html',
@@ -41,7 +41,7 @@ angular.module('main', [
     }
   })
   .state('main.tweetshashtag', {
-    url: '/geotweets/tweetshashtag/:hashtag',
+    url: '/geolocationtweets/tweetshashtag/:hashtag',
     views: {
       'tab-tweets': {
         templateUrl: 'main/templates/tweetshashtag.html',
@@ -64,15 +64,6 @@ angular.module('main', [
       'tab-about': {
         templateUrl: 'main/templates/about.html',
         controller: 'AboutCtrl as aboutC'
-      }
-    }
-  })
-  .state('main.menu', {
-    url: '/main/menu',
-    views: {
-      'tab-menu': {
-        templateUrl: 'main/templates/menu.html',
-        // controller: 'MenuCtrl as menuC'
       }
     }
   });

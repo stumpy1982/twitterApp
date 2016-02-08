@@ -11,18 +11,14 @@ angular.module('main')
     $ionicSideMenuDelegate.toggleLeft();
   };
 
-  /***************************************
-  /* Get Tweet by TweetID
-  /* Parameters: tweetid [int]
-  ***************************************/
+  // Get Tweet by Tweet ID
   TwitterService.getTweetbyID(tweetid).then(function () {
     $log.log(that.controllerData.tweet);
   });
 
-  /***************************************
-  /* Open Link in InApp-Browser
-  /* Parameters: event [object]
-  ***************************************/
+
+  // Open Link in InApp-Browser
+  // TODO not working yet
   this.getLink = function ($event) {
     if ($event.srcElement.tagName === 'A' && $event.srcElement.href !== '') {
       if (ionic.Platform.isWebView()) {

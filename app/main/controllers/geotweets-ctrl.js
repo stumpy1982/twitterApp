@@ -7,15 +7,15 @@ angular.module('main')
   var geooptions = { enableHighAccuracy: true, timeout: 21000, maximumAge: 0};
 
   // show ionic loader
-  Main.showLoader();
+  Main.showIonicLoader();
 
-  // Get Current Location
+  // Get Current User Location
   $cordovaGeolocation.getCurrentPosition(geooptions)
   .then(function (position) {
     positionG = position.coords;
     TwitterService.getGeoHashtags(position.coords.latitude, position.coords.longitude);
   }, function () {
-    Main.hideLoader();
+    Main.hideIonicLoader();
     Main.showAlert('Problem with Geolocation');
   });
 
