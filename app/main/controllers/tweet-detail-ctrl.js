@@ -20,7 +20,7 @@ angular.module('main')
   // Open Link in InApp-Browser
   // TODO not working yet
   this.getLink = function ($event) {
-    if ($event.srcElement.tagName === 'A' && $event.srcElement.href !== '') {
+    if ($event.srcElement.tagName === 'A') {
       if (ionic.Platform.isWebView()) {
         $event.preventDefault();
       }
