@@ -18,7 +18,7 @@
     <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
     <ion-list ng-repeat="hashtag in geotweetsC.controllerData.hashtags">
       <ion-item class="item-remove-animate small-padding-left item-avatar item-icon-right" type="item-text-wrap" ui-sref="main.tweetshashtag({hashtag:hashtag.name})">
-        <h3>{{hashtag.name}}</h3>
+        <h2>{{hashtag.name}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>

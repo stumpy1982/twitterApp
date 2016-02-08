@@ -31,21 +31,21 @@ angular.module('main', [
       }
     }
   })
-  .state('main.tweetDetail', {
-    url: '/geolocationtweets/tweetshashtag/:hashtag/detail/:tweetid',
-    views: {
-      'tab-tweets': {
-        templateUrl: 'main/templates/tweetdetail.html',
-        controller: 'TweetDetailCtrl as tweetdetailC'
-      }
-    }
-  })
   .state('main.tweetshashtag', {
     url: '/geolocationtweets/tweetshashtag/:hashtag',
     views: {
       'tab-tweets': {
         templateUrl: 'main/templates/tweetshashtag.html',
         controller: 'TweetshashtagCtrl as tweetshashtagC'
+      }
+    }
+  })
+  .state('main.tweetDetail', {
+    url: '/geolocationtweets/tweetshashtag/:hashtag/tweetdetail/:tweetid',
+    views: {
+      'tab-tweets': {
+        templateUrl: 'main/templates/tweetdetail.html',
+        controller: 'TweetDetailCtrl as tweetdetailC'
       }
     }
   })

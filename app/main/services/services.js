@@ -26,8 +26,9 @@ angular.module('main')
   this.browse = function (url) {
     if (ionic.Platform.isWebView()) {
       $window.webview.openWebView(null, null, {
-        iconColor: '#ffffff',
-        backgroundColor: '#4a87ee',
+        iconColor: '#ffff00',
+        backgroundColor: '#818181',
+        isPDF: false,
         url: url,
         visibleAddress: false,
         editableAddress: false,

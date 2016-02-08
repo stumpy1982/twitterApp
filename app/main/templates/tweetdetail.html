@@ -5,7 +5,7 @@
       <div class="item item-text-wrap">
         <img ng-src="{{tweetdetailC.controllerData.tweet.user.profile_image_url}}" />
         <span>{{tweetdetailC.controllerData.tweet.user.name}}</span>
-        <p ng-bind-html='tweetdetailC.controllerData.tweet.text | linky' ng-click='tweetdetailC.getLink($event)'></p>
+        <p ng-bind-html='tweetdetailC.controllerData.tweet.text' ng-click='tweetdetailC.getLink($event)'></p>
       </div>
       <div class="item item-text-wrap">
         <p>{{tweetdetailC.controllerData.tweet.user.location}}</p>

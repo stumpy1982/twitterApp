@@ -7,7 +7,7 @@
   <div class="bar bar-subheader bar-stable item-input-inset">
     <label class="item-input-wrapper">
       <i class="icon ion-ios-search placeholder-icon"></i>
-      <input type="search" name="search" ng-focus="focused()" ng-model="searchword" ng-minlength="3" placeholder="Search">
+      <input type="search" name="search" ng-focus="focused()" ng-model="searchword" ng-minlength="3" placeholder="Twitter durchsuchen">
     </label>
     <button type="submit" ng-click="submit()" class="button button-assertive">
       Search
@@ -15,13 +15,10 @@
   </div>
 </form>
   <ion-content class="hide-on-keyboard-open has-subheader">
-   <ion-refresher pulling-text="Pull to Refresh" on-refresh="doRefresh()">
+   <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
    </ion-refresher>
     <ion-list ng-repeat="tweet in tweetshashtagC.controllerData.tweets | orderBy:sortval">
-      <ion-item
-        class="item-remove-animate item-avatar item-icon-right"
-        type="item-text-wrap"
-        ui-sref="main.tweetDetail({tweetid:tweet.id_str})">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ui-sref="main.tweetDetail({hashtag:hashtag, tweetid:tweet.id_str})">
         <img ng-src="{{tweet.user.profile_image_url}}" />
         <p>{{tweet.text}}</p>
         <p>{{tweet.user.name}} - {{tweet.created_at | StringToDate | date:'dd.MM.yyyy - hh:mm'}}</p>

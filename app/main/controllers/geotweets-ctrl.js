@@ -19,7 +19,7 @@ angular.module('main')
     Main.showAlert('Problem with Geolocation');
   });
 
-  // Pull to Refresh
+  // Pull to refresh
   $scope.doRefresh = function () {
     TwitterService.getGeoHashtags(positionG.latitude, positionG.longitude).then(function () {
       $scope.$broadcast('scroll.refreshComplete');

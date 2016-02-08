@@ -17,7 +17,7 @@ angular.module('main')
       $log.log(that.controllerData.tweets);
     });
 
-    // Pull to Refresh
+    // Pull to refresh
     $scope.doRefresh = function () {
       TwitterService.getTweetsByHashtag('noionicloader').then(function () {
         $scope.$broadcast('scroll.refreshComplete');

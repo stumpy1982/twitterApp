@@ -5,14 +5,12 @@ angular.module('main')
   var consumerKey = encodeURIComponent('7tpSCI61EW6ZYRqWkBZgCD89Y');
   var consumerSecret = encodeURIComponent('rsE8zFFo7zPn7J5KO7rmC9n2dEPmu4eSOmGFjDLvm8EBmAR6Bi');
 
-
   this.serviceData = {
     tweets: [],
     tweet: null,
     hashtags: [''],
     hashtag: '#angular'
   };
-
 
   this.getToken = function () {
     var tokenCredentials = $window.btoa(consumerKey + ':' + consumerSecret);
@@ -57,8 +55,7 @@ angular.module('main')
   };
 
   // Get Tweets based on Hashtag
-  this.getTweetsByHashtag = function (ionicloader)
-  {
+  this.getTweetsByHashtag = function (ionicloader) {
     var that = this;
     if (ionicloader === 'ionicloader') {
       Main.showIonicLoader();

@@ -6,16 +6,10 @@ angular.module('main')
   this.controllerData = TwitterService.serviceData;
   var that = this;
 
-  // sidemenu open toggleLeft
-  $scope.openMenu = function () {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
-
   // Get Tweet by Tweet ID
   TwitterService.getTweetbyID(tweetid).then(function () {
     $log.log(that.controllerData.tweet);
   });
-
 
   // Open Link in InApp-Browser
   // TODO not working yet
