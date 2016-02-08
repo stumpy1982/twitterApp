@@ -18,7 +18,7 @@
    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
    </ion-refresher>
     <ion-list ng-repeat="tweet in tweetshashtagC.controllerData.tweets | orderBy:sortval">
-      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ui-sref="main.tweetDetail({hashtag:hashtag, tweetid:tweet.id_str})">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ui-sref="main.tweetDetail({tweetid:tweet.id_str})">
         <img ng-src="{{tweet.user.profile_image_url}}" />
         <p>{{tweet.text}}</p>
         <p>{{tweet.user.name}} - {{tweet.created_at | StringToDate | date:'dd.MM.yyyy - hh:mm'}}</p>

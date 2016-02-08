@@ -16,14 +16,31 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="AutoHideSplashScreen" value="false" />
-    <preference name="ShowSplashScreenSpinner" value="false" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <preference name="FadeSplashScreenDuration" value="1" />
+        <preference name="FadeSplashScreen" value="true" />
+        <preference name="deployment-target" value="8.0" />
+        <preference name="DisallowOverscroll" value="true" />
+        <preference name="webviewbounce" value="false" />
+        <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+        <config-file parent="UISupportedInterfaceOrientations" target="*-Info.plist">
+            <array>
+                <string>UIInterfaceOrientationLandscapeLeft</string>
+                <string>UIInterfaceOrientationLandscapeRight</string>
+                <string>UIInterfaceOrientationPortrait</string>
+            </array>
+        </config-file>
+        <config-file parent="NSAppTransportSecurity" target="*-Info.plist">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true />
+            </dict>
+        </config-file>
     </platform>
     <engine name="ios" spec="~3.9.2" />
     <engine name="android" spec="~4.1.1" />
@@ -34,4 +51,6 @@
     <plugin name="cordova-plugin-network-information" spec="~1.2.0" />
     <plugin name="cordova-plugin-splashscreen" spec="~3.1.0" />
     <plugin name="cordova-plugin-statusbar" spec="~2.1.0" />
+    <plugin name="cordova-plugin-geolocation" spec="~1.0.1" />
+    <plugin name="com.mwaysolutions.cordova.webviewplugin" spec="https://github.com/mwaylabs/cordova-plugin-inappbrowser.git" />
 </widget>
