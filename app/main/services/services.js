@@ -24,21 +24,20 @@ angular.module('main')
 
   // InApp-Browser settings
   this.browse = function (url) {
-    if (ionic.Platform.isWebView()) {
-      $window.webview.openWebView(null, null, {
-        iconColor: '#ffff00',
-        backgroundColor: '#818181',
-        isPDF: false,
-        url: url,
-        visibleAddress: false,
-        editableAddress: false,
-        icons: {
-          backward: true,
-          forward: true,
-          refresh: true
-        }
-      });
-    }
+    $window.webview.openWebView(null, null, {
+      iconColor: '#ffff00',
+      backgroundColor: '#818181',
+      isPDF: false,
+      url: url,
+      urlEncoding: false,
+      visibleAddress: false,
+      editableAddress: false,
+      icons: {
+        backward: true,
+        forward: true,
+        refresh: true
+      }
+    });
   };
 
 });

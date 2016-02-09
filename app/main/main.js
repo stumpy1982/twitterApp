@@ -76,4 +76,9 @@ angular.module('main', [
       }
     }
   });
+}).config(function ($ionicConfigProvider) {
+  $ionicConfigProvider.backButton.text('Go Back').icon('ion-chevron-left');
+  $ionicConfigProvider.navBar.alignTitle('center');
+  $ionicConfigProvider.tabs.position('bottom');
+  $ionicConfigProvider.tabs.style('standard');
 });

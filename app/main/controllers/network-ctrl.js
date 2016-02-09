@@ -7,13 +7,11 @@ angular.module('main')
       State: null
     };
 
-    if (ionic.Platform.isWebView()) {
-      this.networkData.Networktype = $cordovaNetwork.getNetwork();
-      if ($cordovaNetwork.isOnline()) {
-        this.networkData.State = 'Online';
-      } else {
-        this.networkData.State = 'Offline';
-      }
+    this.networkData.Networktype = $cordovaNetwork.getNetwork();
+    if ($cordovaNetwork.isOnline()) {
+      this.networkData.State = 'Online';
+    } else {
+      this.networkData.State = 'Offline';
     }
 
   });
