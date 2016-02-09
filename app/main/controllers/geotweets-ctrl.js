@@ -1,16 +1,16 @@
 'use strict';
 angular.module('main')
-.controller('GeotweetsCtrl', function ($scope, $state, $ionicSideMenuDelegate, $cordovaGeolocation, TwitterService, Main) {
+.controller('GeotweetsCtrl', function ($scope, $state, $ionicSideMenuDelegate, $cordovaGeolocation, $cordovaVibration, TwitterService, Main) {
 
   this.controllerData = TwitterService.serviceData;
   var positionG = null;
-  var geooptions = { enableHighAccuracy: true, timeout: 21000, maximumAge: 0};
+  var posOptions = {timeout: 21000, enableHighAccuracy: true};
 
   // show ionic loader
   Main.showIonicLoader();
 
   // Get Current User Location
-  $cordovaGeolocation.getCurrentPosition(geooptions)
+  $cordovaGeolocation.getCurrentPosition(posOptions)
   .then(function (position) {
     positionG = position.coords;
     TwitterService.getGeoHashtags(position.coords.latitude, position.coords.longitude);
@@ -24,6 +24,7 @@ angular.module('main')
     TwitterService.getGeoHashtags(positionG.latitude, positionG.longitude).then(function () {
       $scope.$broadcast('scroll.refreshComplete');
     });
+    $cordovaVibration.vibrate(100);
   };
 
   // open Sidemenu

@@ -24,7 +24,7 @@ angular.module('main', [
         templateUrl: 'main/templates/geolocationtweets.html',
         controller: 'GeotweetsCtrl as geotweetsC',
         resolve: {
-          itemG: function (TwitterService) {
+          token: function (TwitterService) {
             return TwitterService.getToken();
           }
         }
@@ -64,6 +64,15 @@ angular.module('main', [
       'tab-about': {
         templateUrl: 'main/templates/about.html',
         controller: 'AboutCtrl as aboutC'
+      }
+    }
+  })
+  .state('main.network', {
+    url: '/network',
+    views: {
+      'tab-network': {
+        templateUrl: 'main/templates/network.html',
+        controller: 'NetworkCtrl as networkC'
       }
     }
   });
