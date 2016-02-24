@@ -36,9 +36,11 @@ angular.module('main')
     var template = '<ion-popover-view><ion-header-bar>' +
     '<h3 class="title">Filter by</h3></ion-header-bar>' +
     '<ion-content><div class="list">' +
-    '<label ng-click="sortTweets(\'date\')" class="item item-radio"><input type="radio" name="filtergroup">' +
+    '<label ng-click="sortTweets(\'date\')" class="item item-radio">' +
+    '<input type="radio" name="filtergroup">' +
       '<div class="item-content">Date</div></label>' +
-    '<label ng-click="sortTweets(\'author\')" class="item item-radio"><input type="radio" name="filtergroup">' +
+    '<label ng-click="sortTweets(\'author\')" class="item item-radio">' +
+    '<input type="radio" name="filtergroup">' +
       '<div class="item-content">Author</div></label>' +
     '</div></ion-content></ion-popover-view>';
 

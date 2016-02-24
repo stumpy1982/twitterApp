@@ -10,8 +10,7 @@ angular.module('main')
   Main.showIonicLoader();
 
   // Get Current User Location
-  $cordovaGeolocation.getCurrentPosition(posOptions)
-  .then(function (position) {
+  $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
     positionG = position.coords;
     TwitterService.getGeoHashtags(position.coords.latitude, position.coords.longitude);
   }, function () {
@@ -21,7 +20,8 @@ angular.module('main')
 
   // Pull to refresh
   $scope.doRefresh = function () {
-    TwitterService.getGeoHashtags(positionG.latitude, positionG.longitude).then(function () {
+    TwitterService.getGeoHashtags(positionG.latitude, positionG.longitude)
+    .then(function () {
       $scope.$broadcast('scroll.refreshComplete');
     });
     $cordovaVibration.vibrate(100);
