@@ -12,7 +12,6 @@ angular.module('main')
   });
 
   // Open Link in InApp-Browser
-  // TODO not working yet
   this.getLink = function ($event) {
     $event.preventDefault();
     if (typeof $event.srcElement.tagName === 'string' && $event.srcElement.tagName.toLowerCase() === 'a' && $event.srcElement.href !== '') {
